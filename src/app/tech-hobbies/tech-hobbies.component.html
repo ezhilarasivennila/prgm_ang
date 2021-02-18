@@ -1,0 +1,67 @@
+<body>
+  <div fxLayout="column" fxLayoutAlign="space-around" fxFlex.xs="80vw">
+    <mat-card style="text-align: center;" class="centeralign">
+      <mat-card-title id="c1">
+        Other Details
+      </mat-card-title>
+      <mat-card-content>
+        <div>
+          <button mat-button (click)="accordion.openAll()">Expand All</button>
+          <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+        </div>
+
+        <mat-accordion multi>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Hobbies
+              </mat-panel-title>
+              <mat-panel-description>
+                Select Hobbies
+                <mat-icon></mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <button mat-raised-button type="submit" (click)="opendialoghobbies()" color="primary">Add Hobbies</button>
+            <br /><br />
+            <ul *ngIf="hobbies" class="list-group">
+
+              <li class="list-group-item list-group-item-info" *ngFor="let hobby of hobbies">
+                {{hobby}}
+              </li><br />
+            </ul>
+          </mat-expansion-panel>
+          <!-- #docregion disabled -->
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Technology
+              </mat-panel-title>
+              <mat-panel-description>
+                Select Technology
+                <mat-icon></mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <button mat-raised-button type="submit" (click)="opendialogtechnology()" color="primary">Add
+              Technology</button>
+            <br /><br />
+
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-info" *ngFor="let technology of technologies">
+                {{technology}}
+              </li><br /><br />&nbsp;&nbsp;
+            </ul>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br />
+        <div>
+          <button mat-raised-button type="submit" (click)="onclickback()" color="primary">Back</button>
+          &nbsp;&nbsp;
+          <button mat-raised-button type="submit" (click)="onclickconfirm()" color="primary">Confirm</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</body>

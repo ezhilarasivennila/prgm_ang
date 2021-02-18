@@ -1,0 +1,39 @@
+.centeralign {
+    margin: auto;
+    width: 50%;
+    border: 1px solid aqua;
+    padding: 10px;
+    background-color: azure;
+    
+  }
+ /* .centeralign {
+    margin: auto;
+    width: 50%;
+    border: 1px solid aqua;
+    padding: 10px;
+    background-color: azure;
+    display:flex;
+    flex-wrap:wrap;
+    flex-position:initial;
+  }*/
+  #c1
+  {
+    text-align: center;
+  }
+  body{
+    background-color: #cccccc;
+    background-size: cover;
+    background-image: url('C:\Users\EzhilarasiSankar\employee-reg-form\src\assets\EmployeeImages\hobby.jfif');
+}
+/*ul li{
+  list-style-type: none;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 50px;
+  border: 2px solid aquamarine;
+  padding: 10px;
+  border-top-right-radius: 50px 20px;
+  border-top-left-radius: 50px 20px;
+  
+
+}*/

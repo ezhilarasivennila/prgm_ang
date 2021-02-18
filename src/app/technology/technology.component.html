@@ -1,0 +1,20 @@
+<mat-card>
+	<mat-card-title>
+		Select Technologies known
+    </mat-card-title>
+<mat-card-content>
+ <ul>
+     <li *ngFor="let technology of technologies">
+    <mat-checkbox [value]="technology" (change)="oncheck(technology)">
+   {{technology}}
+    </mat-checkbox>
+</li>
+</ul>
+ </mat-card-content>
+ <div>
+    <button mat-raised-button type="submit" (click)="onsave()" [mat-dialog-close]="data.checktechnology" color="primary">Save</button>&nbsp;&nbsp;
+    <button mat-raised-button type="submit" (click)="onclose(data.checktechnology)" color="primary">Close</button>
+
+</div>
+{{saved}}
+</mat-card>

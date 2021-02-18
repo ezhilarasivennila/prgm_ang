@@ -1,0 +1,90 @@
+<div class="entire">
+    <div fxLayout="column" fxLayoutAlign="space-around" fxFlex.xs="80vw">
+    <mat-card style="text-align: center;" class="centeralign">
+        <mat-card-title>
+            Employee Details
+        </mat-card-title>
+        <mat-card-content>
+            <form name="form" [formGroup]="employeeprofile">
+                <div>
+                    <label id="text">First Name</label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="fname" placeholder="Ezhil" required>
+                        <mat-error *ngIf="employeeprofile.controls['fname'].errors?.firstname">FirstName Can't be Empty
+                            and must within 3 to 15</mat-error>
+                    </mat-form-field>
+                </div>
+               
+                <div>
+                    <label id="text">Last Name</label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="lname" placeholder="sankar" required>
+                        <mat-error *ngIf="employeeprofile.controls['lname'].errors?.lastname">LastName Can't be Empty
+                            and must within 3 to 15</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label id="text">Date of Birth</label>
+                    <mat-form-field appearance="outline">
+                        <input matInput [matDatepicker]="pickdate" formControlName="dob">
+                        <mat-datepicker-toggle matSuffix [for]="pickdate"></mat-datepicker-toggle>
+                        <mat-datepicker #pickdate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label id="text">Designation</label>
+                    <mat-form-field appearance="outline">
+                        <mat-select formControlName="designation">
+                            <mat-option *ngFor="let designation of designationList" [value]="designation">
+                                {{designation}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label id="text">Experience</label>
+                    <mat-form-field appearance="outline">
+                        <mat-select formControlName="experience">
+                            <mat-option *ngFor="let experiencel of experienceList" [value]="experiencel">{{experiencel}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label id="text">Select state</label>
+                    <mat-form-field appearance="outline">
+                        <mat-select formControlName="state" (selectionChange)="onselect($event)">
+                            <mat-option *ngFor="let state of stateList" [value]="state.state">{{state.state}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label id="text">Select city</label>
+                    <mat-form-field appearance="outline">
+                        <mat-select formControlName="city">
+                            <mat-option *ngFor="let city1 of cities" value="{{city1}}">{{city1}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+               
+                <div id="d1">
+
+                    <!--   <button mat-button color="warn" (click)="onimgclick()">
+                    <mat-icon>file_upload</mat-icon>
+                    Upload
+                   
+              </button>-->
+                    <input type="file" id="imgUpload" name="imgUpload" (change)="onFileChanged($event)"
+                        formControlName="img" accept="image/*" />
+                    {{uploadmsg}}
+                </div>
+
+                <div>
+                    <button mat-raised-button [disabled]="employeeprofile.invalid" (click)="onsubmit()" type="submit"
+                        color="primary">Next</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<mat-card>
+	<mat-card-title>
+		Select your hobbies
+    </mat-card-title>
+<mat-card-content>
+    <ul>
+        <li *ngFor="let hobby of hobbies">  
+    <mat-checkbox [value]="hobby" (change)="oncheck(hobby)">{{hobby}}</mat-checkbox>
+    </li>
+    </ul>
+{{data.checkhobby}}
+ </mat-card-content>
+ <div>
+    <button mat-raised-button type="submit" (click)="onsave()" [mat-dialog-close]="data.checkhobby" color="primary">Save</button>&nbsp;&nbsp;
+    <button mat-raised-button type="submit" (click)="onclose()" color="primary">Close</button>
+
+</div>
+{{saved}}
+</mat-card>

@@ -1,0 +1,41 @@
+<body>
+    <div fxLayout="column" fxLayoutAlign="space-around" fxFlex.xs="80vw">
+    <mat-card style="text-align: center;" class="centeralign">
+        <mat-card-title>
+           Login
+        </mat-card-title>
+        <mat-card-content>
+            <form name="form" [formGroup]="loginprofile">
+                <div>
+                    <label id="text">User Name</label>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="username" placeholder="Ezhil" required>
+                        <mat-error *ngIf="loginprofile.controls['username'].errors?.username">Name Can't be Empty
+                            and must within 3 to 15</mat-error>
+                    </mat-form-field>
+                </div>
+               
+                <div>
+                    <label id="text">Password</label>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="password" formControlName="password" required>
+                        <mat-error *ngIf="loginprofile.controls['password'].errors?.password">Password Can't be Empty
+                            and must within 8 to 15</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label id="t1">Choose role</label>
+                    <mat-radio-group aria-labelledby="radio-group-label" formControlName="role" class="radio-group" color="primary">
+                        <mat-radio-button class="radio-button" value="Admin">Admin</mat-radio-button>
+                        <mat-radio-button class="radio-button" value="User">User</mat-radio-button>   
+                      </mat-radio-group>
+                </div>
+                <div>
+                    <button mat-raised-button [disabled]="loginprofile.invalid" (click)="onlogin()" type="submit"
+                        color="primary">Login</button>
+                </div>
+</form>
+</mat-card-content>
+</mat-card>
+</div>
+</body>

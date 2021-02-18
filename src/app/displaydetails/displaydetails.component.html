@@ -1,0 +1,51 @@
+<body>
+    <div fxLayout="column" fxLayoutAlign="space-around" fxFlex.xs="80vw">
+        <h2 id="emp">Employee Details</h2>
+        <table mat-table [dataSource]="this.empservice.datasource" class="mat-elevation-z8">
+            <ng-container matColumnDef="fullname">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element of this.empservice.datasource.data"> {{element.fname}} {{element.lname}} </td>
+            </ng-container>
+        </table>
+        <table class="aligncenter">
+
+            <tr>
+                <td>Employee Name</td>
+                <td>{{firstname}} {{lastname}}</td>
+            </tr>
+            <tr>
+                <td>Profile Image</td>
+                <td><img [src]="empimg" width="50" height="50" /></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>{{dob | date : 'mediumDate'}}</td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td>{{designation}}</td>
+            </tr>
+            <tr>
+                <td>Years of Experience</td>
+                <td>{{exp}}</td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>{{state}}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{city}}</td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td>{{hobby}}</td>
+            </tr>
+            <tr>
+                <td>Technologies</td>
+                <td>{{technology}}</td>
+            </tr>
+
+        </table>
+    </div>
+</body>
