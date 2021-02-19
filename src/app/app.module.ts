@@ -33,6 +33,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthguardserviceService } from './authguardservice.service';
 import {MatRadioModule} from '@angular/material/radio';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { AuthenticationGuard } from './authentication.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,7 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
     FormsModule,MatFormFieldModule,
     ReactiveFormsModule,MatRadioModule
   ],
-  providers: [{ provide: ErrorStateMatcher, useClass: TouchedErrorStateMatcher },EmployeeService,AuthguardserviceService],
+  providers: [{ provide: ErrorStateMatcher, useClass: TouchedErrorStateMatcher },EmployeeService,AuthguardserviceService,AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

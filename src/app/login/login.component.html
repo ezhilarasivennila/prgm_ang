@@ -9,7 +9,7 @@
                 <div>
                     <label id="text">User Name</label>
                     <mat-form-field appearance="outline">
-                        <input matInput formControlName="username" placeholder="Ezhil" required>
+                        <input type="text" matInput formControlName="username" placeholder="Ezhil" #u1 required>
                         <mat-error *ngIf="loginprofile.controls['username'].errors?.username">Name Can't be Empty
                             and must within 3 to 15</mat-error>
                     </mat-form-field>
@@ -18,7 +18,7 @@
                 <div>
                     <label id="text">Password</label>
                     <mat-form-field appearance="outline">
-                        <input matInput type="password" formControlName="password" required>
+                        <input matInput type="password" formControlName="password" #p1 required>
                         <mat-error *ngIf="loginprofile.controls['password'].errors?.password">Password Can't be Empty
                             and must within 8 to 15</mat-error>
                     </mat-form-field>
@@ -31,9 +31,10 @@
                       </mat-radio-group>
                 </div>
                 <div>
-                    <button mat-raised-button [disabled]="loginprofile.invalid" (click)="onlogin()" type="submit"
+                    <button mat-raised-button [disabled]="loginprofile.invalid" (click)="onlogin(u1.value,p1.value)" type="submit"
                         color="primary">Login</button>
                 </div>
+                <span>{{msg}}</span>
 </form>
 </mat-card-content>
 </mat-card>

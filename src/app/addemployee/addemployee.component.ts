@@ -19,7 +19,7 @@ export class AddemployeeComponent implements OnInit {
     lname: new FormControl(' ', [validateLastName, Validators.minLength(3), Validators.maxLength(15)]),
     designation: new FormControl('', Validators.required),
     experience: new FormControl(' ', Validators.required),
-    gender:new FormControl(' ')
+    gender:new FormControl(' ',Validators.required)
   });
   designationList: string[] = ['B.E', 'B.TECH', 'M.E', 'M.TECH', 'B.SC', 'BCA'];
   experienceList: string[] = ['0', '1', '2', '3', '4', '5', '6', '7'];

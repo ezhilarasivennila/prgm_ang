@@ -32,7 +32,7 @@
                 <div>
                     <label id="text">Designation</label>
                     <mat-form-field appearance="outline">
-                        <mat-select formControlName="designation">
+                        <mat-select formControlName="designation" required>
                             <mat-option *ngFor="let designation of designationList" [value]="designation">
                                 {{designation}}</mat-option>
                         </mat-select>
@@ -41,7 +41,7 @@
                 <div>
                     <label id="text">Experience</label>
                     <mat-form-field appearance="outline">
-                        <mat-select formControlName="experience">
+                        <mat-select formControlName="experience" required>
                             <mat-option *ngFor="let experiencel of experienceList" [value]="experiencel">{{experiencel}}
                             </mat-option>
                         </mat-select>
