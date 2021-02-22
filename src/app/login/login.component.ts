@@ -24,10 +24,12 @@ export class LoginComponent implements OnInit {
     role: new FormControl(' ')});
     rolecheck:string='';
     msg:string='';
+    nameuser:string='user';
     onlogin(uname:string,pswd:string)
     {
       this.empservice.logindata=this.loginprofile.value;
       this.rolecheck=this.empservice.logindata["role"];
+      //this.nameuser=this.empservice.logindata["username"];
       console.log(uname+" "+pswd+" "+this.rolecheck);
       var auth=this.authservice.checkusernamepassword(uname,pswd);
       console.log(auth);

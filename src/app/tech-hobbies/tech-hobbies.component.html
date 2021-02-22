@@ -22,12 +22,15 @@
                 <mat-icon></mat-icon>
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <button mat-raised-button type="submit" (click)="opendialoghobbies()" color="primary">Add Hobbies</button>
-            <br /><br />
+            <app-hobbies (hobbyevent)="addhobbyevent($event)"></app-hobbies>
+         <!--   <button mat-raised-button type="submit" (click)="opendialoghobbies()" color="primary">Add Hobbies</button>
+            --><br /><br />
             <ul *ngIf="hobbies" class="list-group">
 
-              <li class="list-group-item list-group-item-info" *ngFor="let hobby of hobbies">
-                {{hobby}}
+              <li class="list-group-item list-group-item-info" *ngFor="let hobby of hobbies;let i=index">
+                {{hobby}}<button mat-icon-button (click)="deletehobby(hobby,i)" id="b1">
+                  <mat-icon>delete</mat-icon>
+               </button>
               </li><br />
             </ul>
           </mat-expansion-panel>
@@ -43,13 +46,15 @@
                 <mat-icon></mat-icon>
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <button mat-raised-button type="submit" (click)="opendialogtechnology()" color="primary">Add
-              Technology</button>
+           <app-technology (techevent)="addtechnologyevent($event)"></app-technology>
+           <!-- <button mat-raised-button type="submit" (click)="opendialogtechnology()" color="primary">Add
+              Technology</button>-->
             <br /><br />
-
+              {{technologies}}
             <ul class="list-group">
-              <li class="list-group-item list-group-item-info" *ngFor="let technology of technologies">
-                {{technology}}
+              <li class="list-group-item list-group-item-info" *ngFor="let technology of technologies;let i=index">
+                {{technology}}<button mat-icon-button (click)="deletetechnology(technology,i)" id="b1">
+                  <mat-icon>delete</mat-icon></button>
               </li><br /><br />&nbsp;&nbsp;
             </ul>
 
@@ -61,7 +66,18 @@
           &nbsp;&nbsp;
           <button mat-raised-button type="submit" (click)="onclickconfirm()" color="primary">Confirm</button>
         </div>
+   <!--   <ul class="list-group"> User liked books
+          <li class="list-group-item list-group-item-info" *ngFor="let book of books">
+              {{book}}
+          </li>
+        </ul>-->  
       </mat-card-content>
     </mat-card>
   </div>
+  <br/>
+  <br/>
+  <!--<app-bookchild (newBookevent)="addBookevent($event)"></app-bookchild>-->
+  <br/>
+  <br/>
+  <app-hobbychild [hobbystring]="displayhobbystring"></app-hobbychild>
 </body>

@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "my-new-ezhil-angular"
+    "default": "my-new-ezhil-empform",
+    "employeereg": "my-new-ezhil-empform",
+    "empl": "my-new-ezhil-empform"
   }
 }

@@ -6,6 +6,10 @@
     background-color: azure;
     
   }
+  #b1
+  {
+    float: right;
+  }
  /* .centeralign {
     margin: auto;
     width: 50%;

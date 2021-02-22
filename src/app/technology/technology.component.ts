@@ -1,5 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Output,EventEmitter } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import { EmployeeService } from '../service/employee.service';
 import {  DialogDatainput } from './technologyinterface';
 
@@ -10,7 +11,7 @@ import {  DialogDatainput } from './technologyinterface';
 })
 export class TechnologyComponent implements OnInit {
 
-  constructor(public dialogobj:MatDialogRef<TechnologyComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogDatainput,private empservice:EmployeeService) { }
+  //constructor(public dialogobj:MatDialogRef<TechnologyComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogDatainput,private empservice:EmployeeService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,7 @@ export class TechnologyComponent implements OnInit {
   technologies=[
     'java','c','c++','c#','python'
   ]
+  constructor(){}
   saved:string='';
   onsave()
   {
@@ -25,7 +27,7 @@ export class TechnologyComponent implements OnInit {
    
    // this.dialogobj.close();
   }
-  onclose(selecttech:string[])
+ /* onclose(selecttech:string[])
   {
     this.dialogobj.close();
     return selecttech;
@@ -35,5 +37,11 @@ export class TechnologyComponent implements OnInit {
 this.data.checktechnology.push(tech);
 this.empservice.technologies=this.data.checktechnology;
 console.log(this.data.checktechnology);
+}*/
+@Output()
+public techevent=new EventEmitter();
+addtech(value:string)
+{
+  this.techevent.emit(value);
 }
 }

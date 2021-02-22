@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { EmployeeService } from '../service/employee.service';
@@ -52,7 +52,8 @@ export class EmployeedetailsComponent implements OnInit {
   designationList: string[] = ['B.E', 'B.TECH', 'M.E', 'M.TECH', 'B.SC', 'BCA'];
   experienceList: string[] = ['0', '1', '2', '3', '4', '5', '6', '7'];
   filename: any;
-
+@Input()
+displayname:string='';
   stateList: any = []
   getstate() {
     return this.http.get<any>("../../assets/state.json").subscribe(data => { this.empservice.state2 = data; this.stateList = this.empservice.state2.states; console.log(this.empservice.state2) });

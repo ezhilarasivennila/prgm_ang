@@ -1,4 +1,4 @@
-<mat-card>
+<!--<mat-card>
 	<mat-card-title>
 		Select your hobbies
     </mat-card-title>
@@ -16,4 +16,7 @@
 
 </div>
 {{saved}}
-</mat-card>
+</mat-card>-->
+<label>Add Hobby: <input mat-Input #hobby></label><br/>
+<button mat-raised-button type="submit" (click)="addhobby(hobby.value)" color="primary">Add an
+  Hobby</button>

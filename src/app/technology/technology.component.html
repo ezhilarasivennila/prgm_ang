@@ -1,4 +1,4 @@
-<mat-card>
+<!--<mat-card>
 	<mat-card-title>
 		Select Technologies known
     </mat-card-title>
@@ -17,4 +17,7 @@
 
 </div>
 {{saved}}
-</mat-card>
+</mat-card>-->
+<label>Add an Technology: <input mat-Input #techno></label><br/>
+<button mat-raised-button type="submit" (click)="addtech(techno.value)" color="primary">Add an
+  Technology</button>

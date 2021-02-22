@@ -1,4 +1,8 @@
 <body>
+    <div class="pos">
+        <img id="imag" [src]="empimg" width="50" height="50" /><br/>
+       <p id="p1">{{firstname}} {{lastname}}   </p> 
+    </div>
     <div fxLayout="column" fxLayoutAlign="space-around" fxFlex.xs="80vw">
         <h2 id="emp">Employee Details</h2>
         <table mat-table [dataSource]="this.empservice.datasource" class="mat-elevation-z8">

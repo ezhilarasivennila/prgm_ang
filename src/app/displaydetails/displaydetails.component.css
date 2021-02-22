@@ -29,5 +29,20 @@ table {
   body{
     background-color: #cccccc;
       background-size: cover;
-      background-image: url('C:\Users\EzhilarasiSankar\employee-reg-form\src\assets\EmployeeImages\employeeimg.jfif');
-  }
+       }
+       #imag
+       {
+         
+         border-radius: 50%;
+         margin-top: 50px;
+         margin-left: 600px;
+       }
+     .pos
+     {
+       position: relative;
+     }  
+      #p1
+      {
+        margin-top: 20px;
+         margin-left: 580px;
+      }

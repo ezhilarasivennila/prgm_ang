@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthguardserviceService {
 
   constructor() { }
+  username="admin";
   checkusernamepassword(usname:string,pwd:string)
   {
     console.log(usname+""+pwd);
@@ -14,7 +15,7 @@ export class AuthguardserviceService {
     //usname="ezhilarasi";
    // console.log(usname=='ezhilarasi');
     //console.log(pwd=="abc1234562");
-    
+    //console.log(usname=="admin");
     if(usname=="admin" && pwd=="abc1234562")
     {
       //console.log(usname);

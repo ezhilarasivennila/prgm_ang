@@ -34,6 +34,8 @@ import { AuthguardserviceService } from './authguardservice.service';
 import {MatRadioModule} from '@angular/material/radio';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { HobbychildComponent } from './hobbychild/hobbychild.component';
+import { BookchildComponent } from './bookchild/bookchild.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,9 @@ import { AuthenticationGuard } from './authentication.guard';
     TechnologyComponent,
     DisplaydetailsComponent,
     LoginComponent,
-    AddemployeeComponent
+    AddemployeeComponent,
+    HobbychildComponent,
+    BookchildComponent
   ],
   imports: [
     BrowserModule,MatButtonModule,MatSelectModule,MatIconModule,MatExpansionModule,
